@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Ekart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html"><h1>Ekart</h1></a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, brands and more">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="profile.html" class="nav-link"><i class="fas fa-user"></i> <span class="header-user-name">My Account</span></a>
+                    <a href="cart.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <aside class="profile-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="images/avatar-placeholder.png" alt="User Avatar" id="user-avatar-img">
+                            <button class="change-avatar-btn"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h3 class="user-name" id="profile-user-name">Hello, User</h3>
+                        <p class="user-email" id="profile-user-email">user@example.com</p>
+                    </div>
+                    <ul class="profile-menu">
+                        <li class="active" data-tab="profile-details"><i class="fas fa-user-circle"></i> My Profile</li>
+                        <li data-tab="orders"><i class="fas fa-box"></i> My Orders</li>
+                        <li data-tab="addresses"><i class="fas fa-map-marker-alt"></i> My Addresses</li>
+                        <li data-tab="payment-methods"><i class="fas fa-credit-card"></i> Payment Methods</li>
+                        <li data-tab="wishlist"><i class="fas fa-heart"></i> My Wishlist</li>
+                        <li data-tab="notifications"><i class="fas fa-bell"></i> Notifications</li>
+                        <li id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</li>
+                    </ul>
+                </aside>
+
+                <main class="profile-content">
+                    
+                    <div class="profile-tab active" id="profile-details">
+                        <div class="tab-header">
+                            <h2>My Profile</h2>
+                            <button class="edit-btn" id="edit-profile-btn"><i class="fas fa-pen"></i> Edit</button>
+                        </div>
+                        <form id="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-full-name">Full Name</label>
+                                    <input type="text" id="profile-full-name" value="User Name" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-email">Email</label>
+                                    <input type="email" id="profile-email" value="user@example.com" disabled>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-phone">Phone Number</label>
+                                    <input type="tel" id="profile-phone" value="+91-9876543210" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-gender">Gender</label>
+                                    <select id="profile-gender" disabled>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions hidden" id="profile-form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancel-profile-btn">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+
+                        <div class="section-divider"></div>
+
+                        <h4>Change Password</h4>
+                        <form id="password-form">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="current-password">
+                                    <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <input type="password" id="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <input type="password" id="confirm-password">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Change Password</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="profile-tab" id="orders">
+                        <div class="tab-header">
+                            <h2>My Orders</h2>
+                        </div>
+                        <div class="orders-list">
+                            <p>You have no orders.</p>
+                            </div>
+                    </div>
+
+                    <div class="profile-tab" id="addresses">
+                        <div class="tab-header">
+                            <h2>My Addresses</h2>
+                            <button class="btn btn-primary" id="add-new-address-btn"><i class="fas fa-plus"></i> Add New</button>
+                        </div>
+                        <div class="address-form-container hidden" id="address-form">
+                           <h3>Add New Address</h3>
+                           <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancel-address-btn">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Address</button>
+                           </div>
+                        </div>
+                        <div class="addresses-list">
+                            <p>You have no saved addresses.</p>
+                            </div>
+                    </div>
+
+                    <div class="profile-tab" id="payment-methods">
+                        <div class="tab-header">
+                            <h2>Payment Methods</h2>
+                            <button class="btn btn-primary" id="add-new-payment-btn"><i class="fas fa-plus"></i> Add New</button>
+                        </div>
+                        <div class="payment-methods-list">
+                            <p>You have no saved payment methods.</p>
+                            </div>
+                    </div>
+
+                    <div class="profile-tab" id="wishlist">
+                        <div class="tab-header">
+                            <h2>My Wishlist</h2>
+                        </div>
+                        <div class="wishlist-items">
+                            <p>Your wishlist is empty.</p>
+                            </div>
+                    </div>
+
+                    <div class="profile-tab" id="notifications">
+                        <div class="tab-header">
+                            <h2>Notifications</h2>
+                        </div>
+                        <div class="notification-settings">
+                            <div class="notification-group">
+                                <h3>Account</h3>
+                                <div class="notification-option">
+                                    <div>
+                                        <h4>Email Notifications</h4>
+                                        <p>Get updates about your account activity.</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

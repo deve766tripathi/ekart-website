@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekart - Online Shopping</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Ekart</h1>
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, brands and more">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="login.html" class="nav-link"><i class="fas fa-user"></i> Login</a>
+                    <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-categories">
+                <li><a href="products.html?category=electronics">Electronics</a></li>
+                <li><a href="products.html?category=fashion">Fashion</a></li>
+                <li><a href="products.html?category=home">Home & Furniture</a></li>
+                <li><a href="products.html?category=appliances">Appliances</a></li>
+                <li><a href="products.html?category=beauty">Beauty & Personal Care</a></li>
+                <li><a href="products.html?category=toys">Toys & Baby</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-slider">
+                <div class="slide active">
+                    <img src="images/banner1.jpg" alt="Special Offer">
+                    <div class="slide-content">
+                        <h2>Summer Sale</h2>
+                        <p>Up to 50% off on selected items</p>
+                        <a href="products.html?sale=summer" class="btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/banner2.jpg" alt="New Arrivals">
+                    <div class="slide-content">
+                        <h2>New Arrivals</h2>
+                        <p>Check out our latest collection</p>
+                        <a href="products.html?new=true" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="slide-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="images/electronics.jpg" alt="Electronics">
+                    <h3>Electronics</h3>
+                    <a href="products.html?category=electronics" class="category-link">View All</a>
+                </div>
+                <div class="category-card">
+                    <img src="images/fashion.jpg" alt="Fashion">
+                    <h3>Fashion</h3>
+                    <a href="products.html?category=fashion" class="category-link">View All</a>
+                </div>
+                <div class="category-card">
+                    <img src="images/home.jpg" alt="Home & Furniture">
+                    <h3>Home & Furniture</h3>
+                    <a href="products.html?category=home" class="category-link">View All</a>
+                </div>
+                <div class="category-card">
+                    <img src="images/appliances.jpg" alt="Appliances">
+                    <h3>Appliances</h3>
+                    <a href="products.html?category=appliances" class="category-link">View All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Trending Products</h2>
+            <div class="product-grid">
+                <!-- Product cards will be dynamically loaded from JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals of the Day -->
+    <section class="deals-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Deals of the Day</h2>
+                <div class="countdown">
+                    <span id="hours">10</span>h : 
+                    <span id="minutes">30</span>m : 
+                    <span id="seconds">00</span>s
+                </div>
+            </div>
+            <div class="deals-grid">
+                <!-- Deal cards will be dynamically loaded from JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to our Newsletter</h2>
+                <p>Get updates on new products and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ekart</h3>
+                    <p>Your one-stop shop for all your needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="returns.html">Returns & Exchanges</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> support@ekart.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ekart. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
