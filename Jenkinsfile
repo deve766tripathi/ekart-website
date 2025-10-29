@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get the code from the Git repository
-                git 'https://github.com/deve766tripathi/ekart-website.git'
+                git branch: 'main',url: 'https://github.com/deve766tripathi/ekart-website.git'
             }
         }
 
