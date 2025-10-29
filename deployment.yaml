@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ekart-website-deployment # <-- Must match kubectl command
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ekart-website
+  template:
+    metadata:
+      labels:
+        app: ekart-website
+    spec:
+      containers:
+      - name: ekart-container # <-- Must match kubectl command
+        image: devesh1384/ekart-website:latest # Placeholder
+        ports:
+        - containerPort: 80

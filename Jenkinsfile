@@ -2,19 +2,19 @@ pipeline {
     agent any
 
     environment {
-        // Define credentials ID for Docker Hub. We will create this in Jenkins UI.
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-creds'
-        // Define your Docker Hub username
-        DOCKERHUB_USERNAME = 'your-dockerhub-username' // <-- IMPORTANT: Change this!
+        DOCKERHUB_USERNAME = 'devesh1384'
         AWS_REGION = 'ap-south-1'
         EKS_CLUSTER_NAME = 'poll-app-cluster'
+        AWS_CREDENTIALS_ID = 'aws-creds' // The AWS credentials you created in Jenkins
+        IMAGE_NAME = "${DOCKERHUB_USERNAME}/ekart-website"
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Get the code from the Git repository
-                git 'https://github.com/your-github-username/poll-app.git' // <-- IMPORTANT: Change this!
+                git 'https://github.com/deve766tripathi/ekart-website.git'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image and tag it with the build number
-                    sh "docker build -t ${DOCKERHUB_USERNAME}/poll-app:${BUILD_NUMBER} ."
+                    sh "docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} ."
                 }
             }
         }
@@ -38,22 +38,27 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                // Push the newly built image to Docker Hub
-                sh "docker push ${DOCKERHUB_USERNAME}/poll-app:${BUILD_NUMBER}"
+                // This stage was missing
+                sh "docker push ${IMAGE_NAME}:${BUILD_NUMBER}"
             }
         }
 
         stage('Deploy to EKS') {
             steps {
-                script {
-                    // Update kubeconfig to connect to our EKS cluster
-                    sh "aws eks update-kubeconfig --region ${AWS_REGION} --name ${EKS_CLUSTER_NAME}"
-                    
-                    // We will create these Kubernetes files in the next step
-                    // This command applies the configuration to the cluster,
-                    // telling it to use the new image we just pushed.
-                    sh "kubectl apply -f deployment.yaml"
-                    sh "kubectl apply -f service.yaml"
+                // This wrapper is CRITICAL. It uses your 'aws-creds' to authenticate.
+                withCredentials([aws(credentials: AWS_CREDENTIALS_ID, region: AWS_REGION)]) {
+                    script {
+                        // Update kubeconfig to connect to our EKS cluster
+                        sh "aws eks update-kubeconfig --region ${AWS_REGION} --name ${EKS_CLUSTER_NAME}"
+                        
+                        // Apply the deployment and service files
+                        sh "kubectl apply -f deployment.yaml"
+                        sh "kubectl apply -f service.yaml"
+
+                        // This is the most important command.
+                        // It tells Kubernetes to update the deployment with the new image.
+                        sh "kubectl set image deployment/ekart-website-deployment ekart-container=${IMAGE_NAME}:${BUILD_NUMBER}"
+                    }
                 }
             }
         }
