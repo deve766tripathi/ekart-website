@@ -17,6 +17,12 @@ pipeline {
                 git branch: 'main',url: 'https://github.com/deve766tripathi/ekart-website.git'
             }
         }
+    stage('Configure Server with Ansible') {
+    steps {
+        // Run the ansible playbook we just created
+        sh 'ansible-playbook ansible/install_agent.yml'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
