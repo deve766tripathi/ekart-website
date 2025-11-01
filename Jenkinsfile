@@ -46,7 +46,7 @@ pipeline {
         stage('Deploy to EKS') {
             steps {
                 // This wrapper is CRITICAL. It uses your 'aws-creds' to authenticate.
-                withCredentials([aws(credentials: AWS_CREDENTIALS_ID, region: AWS_REGION)]) {
+                withCredentials([aws(credentialsId: AWS_CREDENTIALS_ID, region: AWS_REGION)]) {
                     script {
                         // Update kubeconfig to connect to our EKS cluster
                         sh "aws eks update-kubeconfig --region ${AWS_REGION} --name ${EKS_CLUSTER_NAME}"
