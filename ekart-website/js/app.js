@@ -72,7 +72,7 @@ const products = [
         discount: "35% off",
         rating: 4.5,
         ratingCount: 1287,
-        image: "images/headphones.jpg",
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&auto=format",
         category: "electronics"
     },
     {
@@ -84,7 +84,7 @@ const products = [
         discount: "30% off",
         rating: 4.2,
         ratingCount: 856,
-        image: "images/shirt.jpg",
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop&auto=format",
         category: "fashion"
     },
     {
@@ -96,7 +96,7 @@ const products = [
         discount: "28% off",
         rating: 4.7,
         ratingCount: 2341,
-        image: "images/tv.jpg",
+        image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=400&fit=crop&auto=format",
         category: "electronics"
     },
     {
@@ -108,7 +108,7 @@ const products = [
         discount: "36% off",
         rating: 4.4,
         ratingCount: 932,
-        image: "images/chair.jpg",
+        image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=400&fit=crop&auto=format",
         category: "home"
     },
     {
@@ -120,7 +120,7 @@ const products = [
         discount: "25% off",
         rating: 4.8,
         ratingCount: 1543,
-        image: "images/camera.jpg",
+        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=400&fit=crop&auto=format",
         category: "electronics"
     },
     {
@@ -132,7 +132,7 @@ const products = [
         discount: "29% off",
         rating: 4.3,
         ratingCount: 765,
-        image: "images/bottle.jpg",
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop&auto=format",
         category: "home"
     },
     {
@@ -144,7 +144,7 @@ const products = [
         discount: "38% off",
         rating: 4.6,
         ratingCount: 1098,
-        image: "images/speaker.jpg",
+        image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&auto=format",
         category: "electronics"
     },
     {
@@ -156,7 +156,7 @@ const products = [
         discount: "25% off",
         rating: 4.4,
         ratingCount: 876,
-        image: "images/shoes.jpg",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop&auto=format",
         category: "fashion"
     }
 ];

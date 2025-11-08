@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (img) {
                             img.src = product.image;
                         }
+                        // Update data-image attribute for thumbnail click
+                        thumbnail.setAttribute('data-image', product.image);
                     });
                 }
                 

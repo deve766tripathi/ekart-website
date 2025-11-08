@@ -2,18 +2,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Sample Data (Assuming 'products' from app.js is not loaded first) ---
     // In a real app, 'products' would be loaded from app.js or an API
     const allProducts = [
-        { id: 1, name: "Premium Wireless Headphones", brand: "SoundMax", price: 129.99, originalPrice: 199.99, discount: 35, rating: 4.5, ratingCount: 1287, image: "images/headphones.jpg", category: "electronics" },
-        { id: 2, name: "Slim Fit Men's Casual Shirt", brand: "FashionPlus", price: 34.99, originalPrice: 49.99, discount: 30, rating: 4.2, ratingCount: 856, image: "images/shirt.jpg", category: "fashion" },
-        { id: 3, name: "Smart LED TV 55-inch 4K", brand: "VisionTech", price: 499.99, originalPrice: 699.99, discount: 28, rating: 4.7, ratingCount: 2341, image: "images/tv.jpg", category: "electronics" },
-        { id: 4, name: "Ergonomic Office Chair", brand: "ComfortZone", price: 159.99, originalPrice: 249.99, discount: 36, rating: 4.4, ratingCount: 932, image: "images/chair.jpg", category: "home" },
-        { id: 5, name: "Professional DSLR Camera", brand: "PixelPro", price: 899.99, originalPrice: 1199.99, discount: 25, rating: 4.8, ratingCount: 1543, image: "images/camera.jpg", category: "electronics" },
-        { id: 6, name: "Stainless Steel Water Bottle", brand: "EcoLife", price: 24.99, originalPrice: 34.99, discount: 29, rating: 4.3, ratingCount: 765, image: "images/bottle.jpg", category: "home" },
-        { id: 7, name: "Wireless Bluetooth Speaker", brand: "SoundMax", price: 79.99, originalPrice: 129.99, discount: 38, rating: 4.6, ratingCount: 1098, image: "images/speaker.jpg", category: "electronics" },
-        { id: 8, name: "Running Shoes for Men", brand: "SportsFit", price: 89.99, originalPrice: 119.99, discount: 25, rating: 4.4, ratingCount: 876, image: "images/shoes.jpg", category: "fashion" },
-        { id: 9, name: "Modern Coffee Maker", brand: "HomeBrew", price: 69.99, originalPrice: 99.99, discount: 30, rating: 4.1, ratingCount: 543, image: "images/coffeemaker.jpg", category: "appliances" },
-        { id: 10, name: "Organic Face Cream", brand: "PureGlow", price: 29.99, originalPrice: 39.99, discount: 25, rating: 4.9, ratingCount: 1500, image: "images/facecream.jpg", category: "beauty" },
-        { id: 11, name: "Building Blocks Set", brand: "KidzJoy", price: 49.99, originalPrice: 69.99, discount: 28, rating: 4.7, ratingCount: 750, image: "images/toys.jpg", category: "toys" },
-        { id: 12, name: "Smartphone 12 Pro", brand: "TechCore", price: 799.99, originalPrice: 999.99, discount: 20, rating: 4.6, ratingCount: 3200, image: "images/smartphone.jpg", category: "electronics" },
+        { id: 1, name: "Premium Wireless Headphones", brand: "SoundMax", price: 129.99, originalPrice: 199.99, discount: 35, rating: 4.5, ratingCount: 1287, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&auto=format", category: "electronics" },
+        { id: 2, name: "Slim Fit Men's Casual Shirt", brand: "FashionPlus", price: 34.99, originalPrice: 49.99, discount: 30, rating: 4.2, ratingCount: 856, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop&auto=format", category: "fashion" },
+        { id: 3, name: "Smart LED TV 55-inch 4K", brand: "VisionTech", price: 499.99, originalPrice: 699.99, discount: 28, rating: 4.7, ratingCount: 2341, image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=400&fit=crop&auto=format", category: "electronics" },
+        { id: 4, name: "Ergonomic Office Chair", brand: "ComfortZone", price: 159.99, originalPrice: 249.99, discount: 36, rating: 4.4, ratingCount: 932, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=400&fit=crop&auto=format", category: "home" },
+        { id: 5, name: "Professional DSLR Camera", brand: "PixelPro", price: 899.99, originalPrice: 1199.99, discount: 25, rating: 4.8, ratingCount: 1543, image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=400&fit=crop&auto=format", category: "electronics" },
+        { id: 6, name: "Stainless Steel Water Bottle", brand: "EcoLife", price: 24.99, originalPrice: 34.99, discount: 29, rating: 4.3, ratingCount: 765, image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop&auto=format", category: "home" },
+        { id: 7, name: "Wireless Bluetooth Speaker", brand: "SoundMax", price: 79.99, originalPrice: 129.99, discount: 38, rating: 4.6, ratingCount: 1098, image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&auto=format", category: "electronics" },
+        { id: 8, name: "Running Shoes for Men", brand: "SportsFit", price: 89.99, originalPrice: 119.99, discount: 25, rating: 4.4, ratingCount: 876, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop&auto=format", category: "fashion" },
+        { id: 9, name: "Modern Coffee Maker", brand: "HomeBrew", price: 69.99, originalPrice: 99.99, discount: 30, rating: 4.1, ratingCount: 543, image: "https://images.unsplash.com/photo-1517668808824-b7a0bcc81f57?w=400&h=400&fit=crop&auto=format", category: "appliances" },
+        { id: 10, name: "Organic Face Cream", brand: "PureGlow", price: 29.99, originalPrice: 39.99, discount: 25, rating: 4.9, ratingCount: 1500, image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop&auto=format", category: "beauty" },
+        { id: 11, name: "Building Blocks Set", brand: "KidzJoy", price: 49.99, originalPrice: 69.99, discount: 28, rating: 4.7, ratingCount: 750, image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&auto=format", category: "toys" },
+        { id: 12, name: "Smartphone 12 Pro", brand: "TechCore", price: 799.99, originalPrice: 999.99, discount: 20, rating: 4.6, ratingCount: 3200, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop&auto=format", category: "electronics" },
     ];
 
     // --- DOM Elements ---

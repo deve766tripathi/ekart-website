@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Set item data
             cartItem.dataset.id = item.id;
-            cartItemElement.querySelector('.item-image img').src = item.image;
+            const itemImage = cartItemElement.querySelector('.item-image img');
+            itemImage.src = item.image || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150&h=150&fit=crop&auto=format';
             cartItemElement.querySelector('.item-name').textContent = item.name;
             
             // Set variants if available
@@ -263,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Wireless Bluetooth Earbuds',
                 price: 49.99,
                 originalPrice: 79.99,
-                image: 'https://via.placeholder.com/150',
+                image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=150&h=150&fit=crop&auto=format',
                 rating: 4.5,
                 ratingCount: 128
             },
@@ -272,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Smart Fitness Tracker Watch',
                 price: 89.99,
                 originalPrice: 119.99,
-                image: 'https://via.placeholder.com/150',
+                image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&h=150&fit=crop&auto=format',
                 rating: 4.3,
                 ratingCount: 95
             },
@@ -281,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Portable Bluetooth Speaker',
                 price: 39.99,
                 originalPrice: 59.99,
-                image: 'https://via.placeholder.com/150',
+                image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=150&h=150&fit=crop&auto=format',
                 rating: 4.7,
                 ratingCount: 203
             },
@@ -290,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Fast Wireless Charger',
                 price: 29.99,
                 originalPrice: 44.99,
-                image: 'https://via.placeholder.com/150',
+                image: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?w=150&h=150&fit=crop&auto=format',
                 rating: 4.2,
                 ratingCount: 87
             }
